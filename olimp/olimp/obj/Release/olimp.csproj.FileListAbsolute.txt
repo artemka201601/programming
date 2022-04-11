@@ -1,0 +1,10 @@
+D:\VS PROJECTS\olimp\bin\Release\olimp.exe.config
+D:\VS PROJECTS\olimp\bin\Release\olimp.exe
+D:\VS PROJECTS\olimp\bin\Release\olimp.pdb
+D:\VS PROJECTS\olimp\obj\Release\olimp.Form1.resources
+D:\VS PROJECTS\olimp\obj\Release\olimp.Properties.Resources.resources
+D:\VS PROJECTS\olimp\obj\Release\olimp.csproj.GenerateResource.cache
+D:\VS PROJECTS\olimp\obj\Release\olimp.csproj.CoreCompileInputs.cache
+D:\VS PROJECTS\olimp\obj\Release\olimp.exe
+D:\VS PROJECTS\olimp\obj\Release\olimp.pdb
+D:\VS PROJECTS\olimp\obj\Release\olimp.csproj.AssemblyReference.cache
