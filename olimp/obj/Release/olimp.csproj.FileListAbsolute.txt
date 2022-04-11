@@ -7,3 +7,4 @@ D:\VS PROJECTS\olimp\obj\Release\olimp.csproj.GenerateResource.cache
 D:\VS PROJECTS\olimp\obj\Release\olimp.csproj.CoreCompileInputs.cache
 D:\VS PROJECTS\olimp\obj\Release\olimp.exe
 D:\VS PROJECTS\olimp\obj\Release\olimp.pdb
+D:\VS PROJECTS\olimp\obj\Release\olimp.csproj.AssemblyReference.cache
