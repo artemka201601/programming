@@ -17,8 +17,7 @@ namespace WindowsFormsApp3
             InitializeComponent();
             dataGridView1.Rows.Add(1, 2);
             dataGridView1.Rows.Add(2, 3);
-            dataGridView1.Rows.Add(3, 4);
-            
+            dataGridView1.Rows.Add(3, 4);    
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,9 +28,11 @@ namespace WindowsFormsApp3
             {
                 form.comboBox1.Items.Add(dataGridView1.Rows[i].Cells[0].Value.ToString() + "," + dataGridView1.Rows[i].Cells[1].Value.ToString());
                 form.comboBox2.Items.Add(dataGridView1.Rows[i].Cells[0].Value.ToString() + "," + dataGridView1.Rows[i].Cells[1].Value.ToString());
-
             }
-
+            for (int j = 0; j < listBox1.Items.Count-1; j++)
+            {
+                form.listBox1.Items.Add(listBox1.Items[j]);
+            }
             form.Show();
             
         }

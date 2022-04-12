@@ -18,7 +18,7 @@ namespace WindowsFormsApp3
             InitializeComponent();
             
         }
-        
+        private Form1 MyForm = Application.OpenForms[0] as Form1;
         private void Form2_Load(object sender, EventArgs e)
         {
             comboBox1.SelectedIndex = 0;
@@ -37,15 +37,24 @@ namespace WindowsFormsApp3
                 if ('('+comboBox1.SelectedItem.ToString()+')' + " - " + '('+comboBox2.SelectedItem.ToString()+')' == listBox1.Items[i].ToString())
                     a = 1;
             if (a != 1)
+            {
                 listBox1.Items.Add('(' + comboBox1.SelectedItem.ToString() + ')' + " - " + '(' + comboBox2.SelectedItem.ToString() + ')');
-                
+                MyForm.listBox1.Items.Add('(' + comboBox1.SelectedItem.ToString() + ')' + " - " + '(' + comboBox2.SelectedItem.ToString() + ')');
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(listBox1.SelectedIndex < listBox1.Items.Count && listBox1.SelectedIndex > -1)
+            if (listBox1.SelectedIndex < listBox1.Items.Count && listBox1.SelectedIndex > -1)
+            {
+                MyForm.listBox1.Items.RemoveAt(listBox1.SelectedIndex);
                 listBox1.Items.RemoveAt(listBox1.SelectedIndex);
-            
+            }
+        }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
         }
     }
 }
