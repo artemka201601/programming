@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.OleDb;
 using System.Windows.Forms;
 using WindowsFormsApp3;
 
@@ -13,12 +8,12 @@ namespace olimp
 {
     public partial class Form1 : Form
     {
+        public string connString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=olimp.mdb";
+        OleDbConnection connection;
         public Form1()
         {
             InitializeComponent();
-            dataGridView1.Rows.Add(1, 2);
-            dataGridView1.Rows.Add(2, 3);
-            dataGridView1.Rows.Add(3, 4);
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -28,8 +23,21 @@ namespace olimp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dataGridView1.Columns[0].HeaderCell.Style.BackColor = Color.DarkGray;
-            dataGridView1.Rows.Add(1, 2);
+            //dataGridView1.Columns[0].HeaderCell.Style.BackColor = Color.DarkGray;
+            connection = new OleDbConnection(connString);
+            connection.Open();
+            try
+            {
+                OleDbDataAdapter dataAdapter = new OleDbDataAdapter("SELECT * FROM [table1]", connection);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                dataGridView1.DataSource = dataTable;
+                connection.Close();
+            }
+            catch
+            {
+                return;
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -58,6 +66,30 @@ namespace olimp
         private void button7_Click(object sender, EventArgs e)
         {
 
+        }
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "")
+            {
+                button5.Enabled = false;
+            }
+            else
+            {
+                button5.Enabled = true;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
         }
     }
 }
