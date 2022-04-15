@@ -18,3 +18,14 @@ D:\github\programming\olimp\obj\Release\olimp.csproj.GenerateResource.cache
 D:\github\programming\olimp\obj\Release\olimp.csproj.CoreCompileInputs.cache
 D:\github\programming\olimp\obj\Release\olimp.exe
 D:\github\programming\olimp\obj\Release\olimp.pdb
+C:\Users\Пользователь\source\repos\olimp\olimp\bin\Release\olimp.exe.config
+C:\Users\Пользователь\source\repos\olimp\olimp\bin\Release\olimp.exe
+C:\Users\Пользователь\source\repos\olimp\olimp\bin\Release\olimp.pdb
+C:\Users\Пользователь\source\repos\olimp\olimp\obj\Release\olimp.csprojAssemblyReference.cache
+C:\Users\Пользователь\source\repos\olimp\olimp\obj\Release\olimp.Form1.resources
+C:\Users\Пользователь\source\repos\olimp\olimp\obj\Release\WindowsFormsApp3.Form2.resources
+C:\Users\Пользователь\source\repos\olimp\olimp\obj\Release\olimp.Properties.Resources.resources
+C:\Users\Пользователь\source\repos\olimp\olimp\obj\Release\olimp.csproj.GenerateResource.cache
+C:\Users\Пользователь\source\repos\olimp\olimp\obj\Release\olimp.csproj.CoreCompileInputs.cache
+C:\Users\Пользователь\source\repos\olimp\olimp\obj\Release\olimp.exe
+C:\Users\Пользователь\source\repos\olimp\olimp\obj\Release\olimp.pdb
