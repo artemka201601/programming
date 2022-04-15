@@ -17,6 +17,8 @@ namespace olimp
 
         }
         Regex regex_xy = new Regex(@"^[1-9]{1}[0-9]?[0-9]?[0-9]?$");
+        Regex regex_blocks = new Regex(@"^[1-2]?[0-9]?[0-9]?$");
+        Regex regex_proiz = new Regex(@"^[1-9]?[0-9]?$");
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -178,6 +180,7 @@ namespace olimp
             DrawGroupBox2(box, e.Graphics, Color.Black, Color.Gray);
         }
 
+        
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (!regex_xy.IsMatch(textBox1.Text))
@@ -186,12 +189,16 @@ namespace olimp
                 {
                     textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
                 }
-                if (textBox1.Text.Length != 0)
+            }
+            if (textBox1.Text.Length != 0)
+            {
+                if (Convert.ToInt32(textBox1.Text.ToString()) >= 10000)
                 {
-                    if (textBox2.Text.Length >= 4)
-                    {
-                        textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
-                    }
+                    textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
+                }
+                if (textBox1.Text.ToString() == "0")
+                {
+                    textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
                 }
             }
             textBox1.SelectionStart = textBox1.Text.Length;
@@ -205,18 +212,138 @@ namespace olimp
                 {
                     textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
                 }
-                if (textBox2.Text.Length != 0)
+            }
+            if (textBox2.Text.Length != 0)
+            {
+                if (Convert.ToInt32(textBox2.Text.ToString()) >= 10000)
                 {
-                    if (textBox2.Text.Length >= 4)
-                    {
-                        textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
-                    }
+                    textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
+                }
+                if (textBox2.Text.ToString() == "0")
+                {
+                    textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
                 }
             }
             textBox2.SelectionStart = textBox2.Text.Length;
         }
 
-        private void textBox7_TextChanged(object sender, EventArgs e)
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            if (!regex_blocks.IsMatch(textBox3.Text))
+            {
+                if (textBox3.Text.Length != 0)
+                {
+                    textBox3.Text = textBox3.Text.Remove(textBox3.Text.Length - 1);
+                }
+            }
+            if (textBox3.Text.Length != 0)
+            {
+                if (Convert.ToInt32(textBox3.Text.ToString()) > 200)
+                {
+                    textBox3.Text = textBox3.Text.Remove(textBox3.Text.Length - 1);
+                }
+                if (textBox3.Text.ToString() == "0")
+                {
+                    textBox3.Text = textBox3.Text.Remove(textBox3.Text.Length - 1);
+                }
+            }
+            textBox3.SelectionStart = textBox3.Text.Length;
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            if (!regex_blocks.IsMatch(textBox4.Text))
+            {
+                if (textBox4.Text.Length != 0)
+                {
+                    textBox4.Text = textBox4.Text.Remove(textBox4.Text.Length - 1);
+                }
+            }
+            if (textBox4.Text.Length != 0)
+            {
+                if (Convert.ToInt32(textBox4.Text.ToString()) > 200)
+                {
+                    textBox4.Text = textBox4.Text.Remove(textBox4.Text.Length - 1);
+                }
+                if (textBox4.Text.ToString() == "0")
+                {
+                    textBox4.Text = textBox4.Text.Remove(textBox4.Text.Length - 1);
+                }
+            }
+            textBox4.SelectionStart = textBox4.Text.Length;
+        }
+
+        
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            if (!regex_blocks.IsMatch(textBox5.Text))
+            {
+                if (textBox5.Text.Length != 0)
+                {
+                    textBox5.Text = textBox5.Text.Remove(textBox5.Text.Length - 1);
+                }
+            }
+            if (textBox5.Text.Length != 0)
+            {
+                if (Convert.ToInt32(textBox5.Text.ToString()) > 200)
+                {
+                    textBox5.Text = textBox5.Text.Remove(textBox5.Text.Length - 1);
+                }
+                if (textBox5.Text.ToString() == "0")
+                {
+                    textBox5.Text = textBox5.Text.Remove(textBox5.Text.Length - 1);
+                }
+            }
+            textBox5.SelectionStart = textBox5.Text.Length;
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            if (!regex_blocks.IsMatch(textBox6.Text))
+            {
+                if (textBox6.Text.Length != 0)
+                {
+                    textBox6.Text = textBox6.Text.Remove(textBox6.Text.Length - 1);
+                }
+            }
+            if (textBox6.Text.Length != 0)
+            {
+                if (Convert.ToInt32(textBox6.Text.ToString()) > 200)
+                {
+                    textBox6.Text = textBox6.Text.Remove(textBox6.Text.Length - 1);
+                }
+                if (textBox6.Text.ToString() == "0")
+                {
+                    textBox6.Text = textBox6.Text.Remove(textBox6.Text.Length - 1);
+                }
+            }
+            textBox6.SelectionStart = textBox6.Text.Length;
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+            if (!regex_blocks.IsMatch(textBox9.Text))
+            {
+                if (textBox9.Text.Length != 0)
+                {
+                    textBox9.Text = textBox9.Text.Remove(textBox9.Text.Length - 1);
+                }
+            }
+            if (textBox9.Text.Length != 0)
+            {
+                if (Convert.ToInt32(textBox9.Text.ToString()) > 30)
+                {
+                    textBox9.Text = textBox9.Text.Remove(textBox9.Text.Length - 1);
+                }
+                if (textBox9.Text.ToString() == "0")
+                {
+                    textBox9.Text = textBox9.Text.Remove(textBox9.Text.Length - 1);
+                }
+            }
+            textBox9.SelectionStart = textBox9.Text.Length;
+        }
+
+        private void textBox7_TextChanged_1(object sender, EventArgs e)
         {
             if (!regex_xy.IsMatch(textBox7.Text))
             {
@@ -224,18 +351,23 @@ namespace olimp
                 {
                     textBox7.Text = textBox7.Text.Remove(textBox7.Text.Length - 1);
                 }
-                if (textBox7.Text.Length != 0)
+            }
+            if (textBox7.Text.Length != 0)
+            {
+                if (Convert.ToInt32(textBox7.Text.ToString()) >= 10000)
                 {
-                    if (textBox7.Text.Length >= 4)
-                    {
-                        textBox7.Text = textBox7.Text.Remove(textBox7.Text.Length - 1);
-                    }
+                    textBox7.Text = textBox7.Text.Remove(textBox7.Text.Length - 1);
+                }
+                if (textBox7.Text.ToString() == "0")
+                {
+                    textBox7.Text = textBox7.Text.Remove(textBox7.Text.Length - 1);
                 }
             }
             textBox7.SelectionStart = textBox7.Text.Length;
         }
 
-        private void textBox8_TextChanged(object sender, EventArgs e)
+        
+        private void textBox8_TextChanged_1(object sender, EventArgs e)
         {
             if (!regex_xy.IsMatch(textBox8.Text))
             {
@@ -243,12 +375,16 @@ namespace olimp
                 {
                     textBox8.Text = textBox8.Text.Remove(textBox8.Text.Length - 1);
                 }
-                if (textBox8.Text.Length != 0)
+            }
+            if (textBox8.Text.Length != 0)
+            {
+                if (Convert.ToInt32(textBox8.Text.ToString()) >= 10000)
                 {
-                    if (textBox8.Text.Length >= 4)
-                    {
-                        textBox8.Text = textBox8.Text.Remove(textBox8.Text.Length - 1);
-                    }
+                    textBox8.Text = textBox8.Text.Remove(textBox8.Text.Length - 1);
+                }
+                if (textBox8.Text.ToString() == "0")
+                {
+                    textBox8.Text = textBox8.Text.Remove(textBox8.Text.Length - 1);
                 }
             }
             textBox8.SelectionStart = textBox8.Text.Length;
@@ -282,6 +418,26 @@ namespace olimp
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //try
+            //{
+                connection.Open();
+                string query = $"DELETE FROM [table1] WHERE X IN ({dataGridView1.CurrentRow})";
+                OleDbCommand delete = new OleDbCommand(query, connection);
+                delete.ExecuteNonQuery();
+                OleDbDataAdapter dataAdapter = new OleDbDataAdapter("SELECT * FROM [table1]", connection);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                dataGridView1.DataSource = dataTable;
+                connection.Close();
+            //}
+            //catch
+            //{
+            //    return;
+            //}
         }
     }
 }
