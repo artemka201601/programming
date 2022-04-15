@@ -4,7 +4,7 @@ using System.Data.OleDb;
 using System.Drawing;
 using System.Windows.Forms;
 using WindowsFormsApp3;
-
+using System.Text.RegularExpressions;
 namespace olimp
 {
     public partial class Form1 : Form
@@ -16,7 +16,7 @@ namespace olimp
             InitializeComponent();
 
         }
-
+        Regex regex_xy = new Regex(@"^[1-9]{1}[0-9]?[0-9]?[0-9]?$");
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -166,6 +166,82 @@ namespace olimp
         {
             GroupBox box = sender as GroupBox;
             DrawGroupBox2(box, e.Graphics, Color.Black, Color.Gray);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (!regex_xy.IsMatch(textBox1.Text))
+            {
+                if (textBox1.Text.Length != 0)
+                {
+                    textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
+                }
+                if (textBox1.Text.Length != 0)
+                {
+                    if (textBox2.Text.Length >= 4)
+                    {
+                        textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
+                    }
+                }
+            }
+            textBox1.SelectionStart = textBox1.Text.Length;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (!regex_xy.IsMatch(textBox2.Text))
+            {
+                if (textBox2.Text.Length != 0)
+                {
+                    textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
+                }
+                if (textBox2.Text.Length != 0)
+                {
+                    if (textBox2.Text.Length >= 4)
+                    {
+                        textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
+                    }
+                }
+            }
+            textBox2.SelectionStart = textBox2.Text.Length;
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            if (!regex_xy.IsMatch(textBox7.Text))
+            {
+                if (textBox7.Text.Length != 0)
+                {
+                    textBox7.Text = textBox7.Text.Remove(textBox7.Text.Length - 1);
+                }
+                if (textBox7.Text.Length != 0)
+                {
+                    if (textBox7.Text.Length >= 4)
+                    {
+                        textBox7.Text = textBox7.Text.Remove(textBox7.Text.Length - 1);
+                    }
+                }
+            }
+            textBox7.SelectionStart = textBox7.Text.Length;
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+            if (!regex_xy.IsMatch(textBox8.Text))
+            {
+                if (textBox8.Text.Length != 0)
+                {
+                    textBox8.Text = textBox8.Text.Remove(textBox8.Text.Length - 1);
+                }
+                if (textBox8.Text.Length != 0)
+                {
+                    if (textBox8.Text.Length >= 4)
+                    {
+                        textBox8.Text = textBox8.Text.Remove(textBox8.Text.Length - 1);
+                    }
+                }
+            }
+            textBox8.SelectionStart = textBox8.Text.Length;
         }
     }
 }
