@@ -55,10 +55,20 @@ namespace olimp
             if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "")
             {
                 button5.Enabled = false;
+                button7.Enabled = false;
             }
             else
             {
                 button5.Enabled = true;
+                button7.Enabled = true;
+            }
+            if (textBox7.Text == "" || textBox8.Text == "" || textBox9.Text == "" || comboBox1.Text == "")
+            {
+                button4.Enabled = false;
+            }
+            else
+            {
+                button4.Enabled = true;
             }
         }
 
@@ -95,7 +105,7 @@ namespace olimp
                 g.Clear(this.BackColor);
 
                 // Draw text
-                g.DrawString(box.Text, box.Font, textBrush, 120, 0);
+                g.DrawString(box.Text, box.Font, textBrush, rect.X + 120, 0);
 
                 // Drawing Border
                 //Left
@@ -242,6 +252,36 @@ namespace olimp
                 }
             }
             textBox8.SelectionStart = textBox8.Text.Length;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Решение невозможно","Результат");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                connection.Open();
+                string query = $"INSERT INTO [table1] VALUES ({textBox1.Text}, {textBox2.Text}, '{comboBox1.SelectedItem}', {textBox9.Text})";
+                OleDbCommand add = new OleDbCommand(query, connection);
+                add.ExecuteNonQuery();
+                OleDbDataAdapter dataAdapter = new OleDbDataAdapter("SELECT * FROM [table1]", connection);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                dataGridView1.DataSource = dataTable;
+                connection.Close();
+            }
+            catch
+            {
+                return;
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -43,9 +43,9 @@ namespace WindowsFormsApp3
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(listBox1.SelectedIndex < listBox1.Items.Count && listBox1.SelectedIndex > -1)
-                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
-            
+            DialogResult result = MessageBox.Show("Вы уверены?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (result == DialogResult.Yes)
+                listBox1.Items.Remove(listBox1.SelectedIndex);
         }
     }
 }
