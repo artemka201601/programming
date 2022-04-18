@@ -3,7 +3,6 @@ using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Windows.Forms;
-using WindowsFormsApp3;
 using System.Text.RegularExpressions;
 using System.IO;
 
@@ -45,11 +44,16 @@ namespace olimp
         private void button5_Click(object sender, EventArgs e)
         {
             Form2 form = new Form2();
+            form.comboBox1.Items.Add(textBox1.Text.ToString() + "," + textBox2.Text.ToString());
+            form.comboBox2.Items.Add(textBox1.Text.ToString() + "," + textBox2.Text.ToString());
             for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
             {
                 form.comboBox1.Items.Add(dataGridView1.Rows[i].Cells[0].Value.ToString() + "," + dataGridView1.Rows[i].Cells[1].Value.ToString());
                 form.comboBox2.Items.Add(dataGridView1.Rows[i].Cells[0].Value.ToString() + "," + dataGridView1.Rows[i].Cells[1].Value.ToString());
-
+            }
+            for (int j = 0; j < listBox1.Items.Count; j++)
+            {
+                form.listBox1.Items.Add(listBox1.Items[j]);
             }
 
             form.Show();
@@ -230,6 +234,7 @@ namespace olimp
 
         private void button7_Click(object sender, EventArgs e)
         {
+            
             MessageBox.Show("Решение невозможно","Результат");
         }
 
