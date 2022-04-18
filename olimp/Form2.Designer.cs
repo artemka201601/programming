@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp3
+﻿namespace olimp
 {
     partial class Form2
     {
@@ -141,6 +141,6 @@
         public System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListBox listBox1;
+        public System.Windows.Forms.ListBox listBox1;
     }
 }
