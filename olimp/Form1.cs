@@ -5,6 +5,8 @@ using System.Drawing;
 using System.Windows.Forms;
 using WindowsFormsApp3;
 using System.Text.RegularExpressions;
+using System.IO;
+
 namespace olimp
 {
     public partial class Form1 : Form
@@ -173,7 +175,6 @@ namespace olimp
             GroupBox box = sender as GroupBox;
             DrawGroupBox2(box, e.Graphics, Color.Black, Color.Gray);
         }
-
         private void groupBox2_Paint(object sender, PaintEventArgs e)
         {
             GroupBox box = sender as GroupBox;
@@ -446,7 +447,17 @@ namespace olimp
 
         private void button6_Click(object sender, EventArgs e)
         {
-            
+            DataTable dt = new DataTable(); 
+            openFileDialog1.FileName = "input.txt"; 
+            if (openFileDialog1.ShowDialog() == DialogResult.Cancel) 
+                return;
+            string filename = openFileDialog1.FileName; 
+            StreamReader sr = new StreamReader(filename);
+        }
+
+        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
         }
     }
 }
